@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    domains: ['localhost'],
-  },
-};
+  reactStrictMode: true,
+  transpilePackages: ['framer-motion', 'lucide-react'],
+}
 
-export default nextConfig;
+export default nextConfig
