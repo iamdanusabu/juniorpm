@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { DarkModeToggle } from "../components/DarkModeToggle";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -19,12 +20,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+        <div className="fixed top-4 right-4 z-50">
+          <DarkModeToggle />
+        </div>
         {children}
       </body>
     </html>
-  );
+  )
 }
